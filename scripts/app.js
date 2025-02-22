@@ -22,8 +22,8 @@
 
         const apiKey = "c07827fcac194d188c20c65975c2202d";
         const city = "Oshawa";
-        const apiUrl = `https://newsapi.org/v2/everything?q=${city}&apiKey=${apiKey}`;
-
+        // Using CORS proxy to bypass CORS restrictions
+        const apiUrl = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${city}&apiKey=${apiKey}`;
 
         console.log("[DEBUG] Fetching news from:", apiUrl);
 
