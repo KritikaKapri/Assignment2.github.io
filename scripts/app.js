@@ -22,18 +22,13 @@
 
         const apiKey = "c07827fcac194d188c20c65975c2202d";
         const city = "Oshawa";
-        const apiUrl = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${city}&apiKey=${apiKey}`;
+        const apiUrl = `https://newsapi.org/v2/everything?q=${city}&apiKey=${apiKey}`;
+
 
         console.log("[DEBUG] Fetching news from:", apiUrl);
 
         try {
-            // Adding the required headers (Origin or X-Requested-With)
-            const response = await fetch(apiUrl, {
-                method: 'GET',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest', // This header is now included
-                }
-            });
+            const response = await fetch(apiUrl);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -78,7 +73,6 @@
             }
         }
     }
-
 
 
 
